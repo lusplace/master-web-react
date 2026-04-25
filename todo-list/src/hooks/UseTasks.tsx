@@ -26,9 +26,6 @@ function useTasks(initialValue: ITask[] = []) {
     }, [filterTask]);
 
     useEffect((): void => {
-        // console.log("\t useEffecting a tasklist");
-        // console.log(taskList);
-
         localStorage.setItem(key, JSON.stringify(taskList));
     }, [taskList]);
 

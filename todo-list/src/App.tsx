@@ -1,12 +1,15 @@
 
 import './App.css'
-import TaskForm from "./components/TaskForm.js";
 import HeaderComponent from "./components/HeaderComponent.js";
 import {TaskProvider} from "./contexts/TaskContext";
 import {compareTask, ITask, Task, TaskContextType} from "./@types/Task";
 import {useTasks} from "./hooks/UseTasks";
-import FilterButtons from "./components/FilterButtons";
+
 import TaskList from "./components/TaskList";
+import { Suspense, lazy} from 'react';
+
+const FilterButtons = lazy(() => import ("./components/FilterButtons"));
+const TaskForm = lazy(() => import ("./components/TaskForm"));
 
 function App() {
     const startingData : ITask[] = ['code', 'depress', 'repeat'].map(item => new Task(item, "indescriptible"))
@@ -19,8 +22,12 @@ function App() {
         <>
             <HeaderComponent></HeaderComponent>
             <TaskProvider value = {taskContextType}>
-                <TaskForm/>
-                <FilterButtons />
+                <Suspense fallback={<div>Loading Form...</div>}>
+                    <TaskForm />
+                </Suspense>
+                <Suspense fallback={<div>Loading Filters...</div>}>
+                    <FilterButtons />
+                </Suspense>
                 <TaskList taskList={filteredTasks}/>
             </TaskProvider>
         </>
