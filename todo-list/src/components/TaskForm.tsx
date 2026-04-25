@@ -15,13 +15,7 @@ export default function TaskForm(){
             alert("Título es obligatorio");
             return;
         }
-
-        try {
-            console.log(
-                {
-                    "tarea en submit": title,
-                    "desc": desc
-                });
+        try  {
             addTask(new Task(title, desc));
             e.target.reset();
         }
@@ -34,23 +28,17 @@ export default function TaskForm(){
         <form className="task-form" onSubmit={handleSubmit}>
             <label>
                 <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => {
-                        //console.log({title: e.target.value})
-                        setTitle(e.target.value)
-                    }}
-                    id="new-task-title"
-                    placeholder="new task"
+                    type= "text"
+                    value= {title}
+                    onChange={(e) => { setTitle(e.target.value) }}
+                    id= "new-task-title"
+                    placeholder= "new task"
                 />
 
                 <input
-                    type="text"
-                    value={desc}
-                    onChange={(e) => {
-                        //console.log({title: e.target.value})
-                        setDesc(e.target.value)
-                    }}
+                    type= "text"
+                    value= {desc}
+                    onChange={(e) => {setDesc(e.target.value)}}
                     id="new-task-desc"
                     placeholder="descripción (opcional)"
                 />
