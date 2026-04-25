@@ -1,12 +1,11 @@
 
 import './App.css'
-import TaskList from "./components/TaskList.js";
 import TaskForm from "./components/TaskForm.js";
 import HeaderComponent from "./components/HeaderComponent.js";
-import {useEffect} from "react";
 import {TaskProvider} from "./contexts/TaskContext";
 import {compareTask, ITask, Task, TaskContextType} from "./@types/Task";
 import {useTasks} from "./hooks/UseTasks";
+import FilteredTask from "./components/FilterButtons";
 
 function App() {
     const startingData : ITask[] = ['code', 'depress', 'repeat'].map(item => new Task(item, "indescriptible"))
@@ -19,7 +18,7 @@ function App() {
         <>
             <HeaderComponent></HeaderComponent>
             <TaskProvider value = {taskContextType}>
-                <TaskList/>
+                <FilteredTask />
                 <TaskForm/>
             </TaskProvider>
         </>

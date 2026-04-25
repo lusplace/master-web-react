@@ -2,10 +2,8 @@ import TaskItem from "./TaskItem.js";
 import {useTaskContext} from "../contexts/TaskContext";
 import {ITask} from "../@types/Task";
 
-export default function TaskList(){
-    const {taskList} = useTaskContext();
+export default function TaskList({taskList}){
 
-    console.log(taskList);
     return (
         <ul className="task-list">
         {taskList && taskList.length !== 0 ? (
