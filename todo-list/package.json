@@ -2,7 +2,7 @@
   "name": "todo-list",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://lusplace.github.io/master-web-react",
+  "homepage": "https://lusplace.github.io/master-web-react/todo-list",
   "type": "module",
   "scripts": {
     "predeploy": "vite build",
