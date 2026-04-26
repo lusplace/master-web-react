@@ -1,7 +1,8 @@
 export default function HeaderComponent(){
     return <>
     <header>
-        <h1>App Title</h1>
+        <img className="header-item " src="public/book-pile.svg" alt="App-logo"/>
+        <h1 className="header-item gloria-hallelujah-regular">App Title</h1>
     </header>
     </>
 }

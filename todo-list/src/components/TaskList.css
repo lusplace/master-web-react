@@ -1,0 +1,6 @@
+.task-list{
+    display: flex;
+    flex-flow: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

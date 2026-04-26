@@ -12,9 +12,7 @@ const FilterButtons = lazy(() => import ("./components/FilterButtons"));
 const TaskForm = lazy(() => import ("./components/TaskForm"));
 
 function App() {
-    const startingData : ITask[] = ['code', 'depress', 'repeat'].map(item => new Task(item, "indescriptible"))
-    const key = 'tasks';
-    const [taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks] = useTasks(JSON.parse(localStorage.getItem(key)) ?? startingData.sort(compareTask));
+    const [taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks] = useTasks([]);
     // @ts-ignore
     const taskContextType : TaskContextType = {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks}
 

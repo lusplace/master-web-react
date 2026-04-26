@@ -1,0 +1,46 @@
+.task-item{
+    display: block;
+    width: 16em;
+    max-height: 18em;
+    min-height: 14em;
+    border: darkkhaki;
+    border-radius: 0;
+    border-width: 2px;
+    background: linear-gradient(0deg ,khaki 71%, #eae392 71%);;
+    padding: 1em 1em;
+    margin: 0.5em;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    display: block;
+    box-shadow: 6px 9px 6px rgba(0, 0, 0, 0.15);
+
+    button{
+        background: none;
+        border: none;
+        font-size: 2em;
+        &:hover{
+            cursor: pointer;
+        }
+        position: inherit;
+        right: 1em;
+        top: 0;
+    }
+
+    input{
+
+    }
+
+    h3{
+        margin: 0;
+        padding: 0.5em 0 0 0;
+        &:hover{
+            cursor: pointer;
+        }
+        line-height: 80%;
+
+        .completed{
+            text-decoration: line-through;
+        }
+    }
+}
+

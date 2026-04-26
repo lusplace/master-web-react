@@ -1,3 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Rock+Salt&family=Shadows+Into+Light&display=swap');
+.shadows-into-light-regular {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rock-salt-regular {
+    font-family: "Rock Salt", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.gloria-hallelujah-regular {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header{
+    display: flex;
+    background-image: url("public/torn-paper.png");
+    max-height: 300px;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+    background-size: 702px 285px;
+    margin: 5px;
+    padding: 0em 1em;
+    overflow-y: visible;
+    .header-item{
+        max-width:100px;
+        padding: 5px;
+
+    }
+}
+
 .task-form{
     display: flex;
+}
+
+
+.task.title
+
+body{
+    background-image: url("public/corkboard-texture.jpg");
+    margin: 0 0 0 0;
 }

@@ -1,6 +1,7 @@
 import TaskItem from "./TaskItem.js";
 import {useTaskContext} from "../contexts/TaskContext";
 import {ITask} from "../@types/Task";
+import './TaskItem.css'
 
 export default function TaskList({taskList}){
 
