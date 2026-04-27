@@ -1,9 +1,8 @@
-import React = require("react");
-import {useTaskContext} from "../contexts/TaskContext";
+import React from 'react';
+import {useTaskContext} from "../contexts/TaskContext.jsx";
 import "./TaskItem.css";
-import {ITask} from "../@types/Task";
 
-export default function TaskItem({task} : {task:ITask}){
+export default function TaskItem({task}){
     const {deleteTask, toggleTask} = useTaskContext()
     return (
         <li className="task-item" key={task.id}>
@@ -20,6 +19,7 @@ export default function TaskItem({task} : {task:ITask}){
             </button>
 
             {task?.desc && task.desc.length > 0 && <p className="shadows-into-light-regular">{task.desc}</p>}
+
         </li>
 );
 }

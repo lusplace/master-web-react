@@ -4,11 +4,11 @@ import React from "react";
 
 const defaultKey = 'tasks';
 
-function useTasks(initialValue: ITask[] = [], customKey: string | undefined | null= null) {
-    const key: string = customKey?? defaultKey;
-    const data: ITask[] = typeof window !== 'undefined'? JSON.parse(localStorage.getItem(key) as string): initialValue;
+function useTasks(initialValue = [], customKey = null) {
+    const key = customKey?? defaultKey;
+    const data = typeof window !== 'undefined'? JSON.parse(localStorage.getItem(key) as string): initialValue;
 
-    const [taskList, setTaskList] : [ITask[], any] = useState(data);
+    const [taskList, setTaskList]= useState(data);
 
     const [filteredTasks, setFilteredTasks] = useState(taskList);
     const [filterTask, setFilter] = useState({
@@ -19,7 +19,7 @@ function useTasks(initialValue: ITask[] = [], customKey: string | undefined | nu
         desc: ""
     });
 
-    useEffect((): void => {
+    useEffect(() => {
         console.log({filterTask: filterTask});
         console.log({taskList: taskList});
         console.log({preFilteredTasks: filteredTasks});
@@ -31,19 +31,19 @@ function useTasks(initialValue: ITask[] = [], customKey: string | undefined | nu
     }, [filterTask]);
 
     if(typeof window !== 'undefined')
-        useEffect((): void => {
+        useEffect(() => {
             localStorage.setItem(key, JSON.stringify(taskList));
         }, [taskList]);
 
-    const addTask : (task: ITask) => void = (task: ITask) :void => {
+    const addTask = (task : ITask)=> {
         setTaskList([task, ...taskList].sort(compareTaskReverse));
         setFilteredTasks([task, ...filteredTasks]);
     };
-    const deleteTask : (id: number) => void = (id: number):void => {
-        setTaskList((taskList: ITask[]) :ITask[] => taskList.filter((task: ITask):boolean => task.id !== id).sort(compareTaskReverse));
-        setFilteredTasks((filteredTasks: ITask[]) :ITask[] => filteredTasks.filter((task: ITask):boolean => task.id !== id));
+    const deleteTask = (id:number)=> {
+        setTaskList((taskList: ITask[]) => taskList.filter((task) => task.id !== id).sort(compareTaskReverse));
+        setFilteredTasks((filteredTasks: ITask[]) => filteredTasks.filter((task) => task.id !== id));
     };
-    const updateTask: (id: number, task:ITask) => void = (id: number, task: ITask):void => {
+    const updateTask: (id: number, task: ITask) => void = (id: number, task: ITask):void => {
         setTaskList((taskList: ITask[]) :ITask[] => taskList.map((item:ITask):ITask => item.id === id ? task : item).sort(compareTaskReverse));
     };
     const toggleTask : (id: number) => void = (id: number) : void => {

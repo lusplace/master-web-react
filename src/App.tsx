@@ -1,8 +1,8 @@
 
 import './App.css'
-import HeaderComponent from "./components/HeaderComponent.js";
+import HeaderComponent from "./components/HeaderComponent";
 import {TaskProvider} from "./contexts/TaskContext";
-import {compareTask, ITask, Task, TaskContextType} from "./@types/Task";
+import {TaskContextType} from "./@types/Task";
 import {useTasks} from "./hooks/UseTasks";
 
 import {TaskList} from "./components/TaskList";

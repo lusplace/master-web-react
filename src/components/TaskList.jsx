@@ -1,14 +1,14 @@
-import TaskItem from "./TaskItem.js";
-import {ITask} from "../@types/Task.js";
+import TaskItem from "./TaskItem.jsx";
 import './TaskItem.css'
-import React = require("react");
+import React from "react";
 
-export function TaskList({taskList} : {taskList: ITask[]}) {
+// @ts-ignore
+export function TaskList({taskList}) {
 
     return (
         <ul className="task-list">
             {taskList && taskList.length !== 0 ? (
-                taskList.map((task: ITask) =>
+                taskList.map((task) =>
                     <TaskItem task={task} key={task.id}/>)
             ) : (
                 <h4>TaskLess</h4>
