@@ -1,13 +1,14 @@
 import {useEffect, useState} from 'react';
 import {compareTaskReverse, FILTER_STATE, ITask} from "../@types/Task";
+import React from "react";
 
 const defaultKey = 'tasks';
 
-function useTasks(initialValue: ITask[] = [], customKey: string = null) {
+function useTasks(initialValue: ITask[] = [], customKey: string | undefined | null= null) {
     const key: string = customKey?? defaultKey;
-    const data: ITask[]  = JSON.parse(localStorage.getItem(key));
+    const data: ITask[] = typeof window !== 'undefined'? JSON.parse(localStorage.getItem(key) as string): initialValue;
 
-    const [taskList, setTaskList] : [ITask[], any] = useState<ITask[]>(data ?? initialValue);
+    const [taskList, setTaskList] : [ITask[], any] = useState(data);
 
     const [filteredTasks, setFilteredTasks] = useState(taskList);
     const [filterTask, setFilter] = useState({
@@ -29,9 +30,10 @@ function useTasks(initialValue: ITask[] = [], customKey: string = null) {
         console.log({postFilteredTasks: filteredTasks});
     }, [filterTask]);
 
-    useEffect((): void => {
-        localStorage.setItem(key, JSON.stringify(taskList));
-    }, [taskList]);
+    if(typeof window !== 'undefined')
+        useEffect((): void => {
+            localStorage.setItem(key, JSON.stringify(taskList));
+        }, [taskList]);
 
     const addTask : (task: ITask) => void = (task: ITask) :void => {
         setTaskList([task, ...taskList].sort(compareTaskReverse));

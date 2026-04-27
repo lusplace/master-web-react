@@ -5,8 +5,9 @@ import {TaskProvider} from "./contexts/TaskContext";
 import {compareTask, ITask, Task, TaskContextType} from "./@types/Task";
 import {useTasks} from "./hooks/UseTasks";
 
-import TaskList from "./components/TaskList";
+import {TaskList} from "./components/TaskList";
 import { Suspense, lazy} from 'react';
+import React = require("react");
 
 const FilterButtons = lazy(() => import ("./components/FilterButtons"));
 const TaskForm = lazy(() => import ("./components/TaskForm"));
@@ -14,12 +15,12 @@ const TaskForm = lazy(() => import ("./components/TaskForm"));
 function App() {
     const [taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks] = useTasks([]);
     // @ts-ignore
-    const taskContextType : TaskContextType = {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks}
+    const taskContext: TaskContextType = {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks}
 
       return (
         <>
             <HeaderComponent></HeaderComponent>
-            <TaskProvider value = {taskContextType}>
+            <TaskProvider value = {taskContext}>
                 <Suspense fallback={<div>Loading Form...</div>}>
                     <TaskForm />
                 </Suspense>

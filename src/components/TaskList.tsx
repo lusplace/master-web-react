@@ -1,18 +1,19 @@
 import TaskItem from "./TaskItem.js";
-import {useTaskContext} from "../contexts/TaskContext.js";
 import {ITask} from "../@types/Task.js";
 import './TaskItem.css'
+import React = require("react");
 
-export default function TaskList({taskList}){
+// @ts-ignore
+export function TaskList({taskList}) {
 
     return (
         <ul className="task-list">
-        {taskList && taskList.length !== 0 ? (
-            taskList.map((task: ITask) =>
-                <TaskItem key={task.id} task={task}/>)
+            {taskList && taskList.length !== 0 ? (
+                taskList.map((task: ITask) =>
+                    <TaskItem task={task} key={task.id}/>)
             ) : (
-        <h4>TaskLess</h4>
-        )
-        }
-    </ul>)
+                <h4>TaskLess</h4>
+            )
+            }
+        </ul>)
 }

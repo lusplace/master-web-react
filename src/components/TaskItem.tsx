@@ -1,10 +1,12 @@
+import React = require("react");
 import {useTaskContext} from "../contexts/TaskContext";
 import "./TaskItem.css";
+import {ITask} from "../@types/Task";
 
 export default function TaskItem({task}){
     const {deleteTask, toggleTask} = useTaskContext()
     return (
-        <li className="task-item">
+        <li className="task-item" key={task.id}>
             <h3 className="rock-salt-regular">
                 {task?.title ?? "Nombre de Tarea"}
             </h3>

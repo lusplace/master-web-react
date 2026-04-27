@@ -5,7 +5,7 @@ class Task implements ITask{
     desc: string;
     status: boolean;
 
-    constructor(title: string, desc: string | null) {
+    constructor(title: string, desc: string = "") {
         this.id = Date.now() + Task.idAutoIncrement++;
         this.title = title;
         this.desc = desc;

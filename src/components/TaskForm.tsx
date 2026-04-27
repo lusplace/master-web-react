@@ -2,13 +2,14 @@ import '../App.css';
 import {useState} from "react";
 import {useTaskContext} from "../contexts/TaskContext";
 import {Task} from "../@types/Task";
+import React = require("react");
 
 export default function TaskForm(){
     const {addTask} = useTaskContext();
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: { preventDefault: () => void; target: { reset: () => void; }; }) => {
         e.preventDefault();
 
         if (!title.trim()) {

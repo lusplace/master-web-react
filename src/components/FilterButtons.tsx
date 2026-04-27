@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react';
 import {FILTER_STATE, ITask, IFilterTask} from "../@types/Task";
 import {useTaskContext} from "../contexts/TaskContext";
-import TaskList from "./TaskList";
+import {TaskList} from "./TaskList";
+import React = require("react");
 
 
 // todo filtrar por más cosas: no se va a hacer
@@ -12,7 +13,7 @@ export default function FilterButtons(){
     const {taskList, filteredTasks, setFilter, filterTask} = useTaskContext();
 
 
-    const handleChange = (event) => {
+    const handleChange = (event: any) => {
         console.log({"new value filter": event.target.value});
         setFilter({...filterTask, status: event.target.value})
     }

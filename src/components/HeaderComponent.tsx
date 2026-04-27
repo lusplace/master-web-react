@@ -1,3 +1,5 @@
+import React = require("react");
+
 export default function HeaderComponent(){
     return <>
     <header>
