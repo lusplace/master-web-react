@@ -1,14 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
-import { Task } from "../@types/Task";
 import { useTasks } from "../hooks/UseTasks";
 
-const mockValues = [
-    {title: "task1", desc: "desc1"},
-    {title: "task2", desc: "desc2"},
-    {title: "task3", desc: "desc3"}
-].map(item => new Task(item.title, item.desc));
 
-const key= 'testTasks';
 
 test('Should init successfully \'UseTasks\' message', () => {
     //const {result} = renderHook(() => useTasks());

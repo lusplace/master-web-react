@@ -28,7 +28,7 @@ type TaskContextType = {
     deleteTask: (id: number) => void;
     toggleTask: (id: number) => void;
     filterTask: IFilterTask;
-    setFilter: (filter: IFilterTask) => void,
+    setFilter: unknown,
     filteredTasks: ITask[];
 };
 

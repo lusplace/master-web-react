@@ -11,7 +11,6 @@ import { Suspense, lazy} from 'react';
 const FilterButtons = lazy(() => import ("./components/FilterButtons"));
 const TaskForm = lazy(() => import ("./components/TaskForm"));
 
-const defaultKey = 'tasks';
 
 function App() {
     const {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks} = useTasks('defaultKey');

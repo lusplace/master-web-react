@@ -1,7 +1,6 @@
-import { renderHook, act } from '@testing-library/react';
+import { act } from '@testing-library/react';
 import ReactDOMClient from 'react-dom/client';
 
-import {useTasks} from "../hooks/UseTasks.js";
 import {Task} from "../@types/Task";
 import TaskItem from "../components/TaskItem";
 
