@@ -1,5 +1,6 @@
-import {createContext, Provider, useContext} from "react"
-import {TaskContextType} from "../@types/Task";
+import {createContext, useContext} from "react";
+import type {Provider} from "react"
+import type {TaskContextType} from "../@types/Task";
 
 const TaskContext: React.Context<TaskContextType | null> = createContext<TaskContextType |null>(null)
 

@@ -1,3 +1,4 @@
+
 class Task implements ITask{
     static idAutoIncrement = 0;
     id: number;
@@ -57,10 +58,12 @@ interface IFilterTask {
     status: FILTER_STATE,
 }
 
+// @ts-ignore
 enum FILTER_STATE {
     NO_FILTER = -1,
     ONLY_PENDING = 0,
     ONLY_COMPLETED = 1
 }
 
-export {ITask, Task, TaskContextType, compareTask, compareTaskReverse, IFilterTask, FILTER_STATE}
+export {Task, compareTask, compareTaskReverse, FILTER_STATE};
+export type { ITask, TaskContextType, IFilterTask, };

@@ -1,7 +1,6 @@
-import React = require("react");
 import {useTaskContext} from "../contexts/TaskContext";
 import "./TaskItem.css";
-import {ITask} from "../@types/Task";
+import type {ITask} from "../@types/Task";
 
 export default function TaskItem({task} : {task:ITask}){
     const {deleteTask, toggleTask} = useTaskContext()

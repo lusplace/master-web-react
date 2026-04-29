@@ -2,19 +2,19 @@
 import './App.css'
 import HeaderComponent from "./components/HeaderComponent";
 import {TaskProvider} from "./contexts/TaskContext";
-import {TaskContextType} from "./@types/Task";
+import type { TaskContextType }  from "./@types/Task";
 import {useTasks} from "./hooks/UseTasks";
 
 import {TaskList} from "./components/TaskList";
 import { Suspense, lazy} from 'react';
-import React = require("react");
 
 const FilterButtons = lazy(() => import ("./components/FilterButtons"));
 const TaskForm = lazy(() => import ("./components/TaskForm"));
 
+const defaultKey = 'tasks';
+
 function App() {
-    const [taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks] = useTasks([]);
-    // @ts-ignore
+    const {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks} = useTasks('defaultKey');
     const taskContext: TaskContextType = {taskList, addTask, updateTask, deleteTask, toggleTask, filterTask, setFilter, filteredTasks}
 
       return (

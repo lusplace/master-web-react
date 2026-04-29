@@ -1,7 +1,6 @@
 import TaskItem from "./TaskItem.js";
-import {ITask} from "../@types/Task.js";
+import type {ITask} from "../@types/Task.js";
 import './TaskItem.css'
-import React = require("react");
 
 export function TaskList({taskList} : {taskList: ITask[]}) {
 
@@ -11,7 +10,7 @@ export function TaskList({taskList} : {taskList: ITask[]}) {
                 taskList.map((task: ITask) =>
                     <TaskItem task={task} key={task.id}/>)
             ) : (
-                <h4>TaskLess</h4>
+                <h4>TaskLess?</h4>
             )
             }
         </ul>)

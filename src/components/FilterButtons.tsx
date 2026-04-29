@@ -1,10 +1,9 @@
-import React from "react";
-import {FILTER_STATE} from "../@types/Task";
 import {useTaskContext} from "../contexts/TaskContext";
+import {FILTER_STATE} from "../@types/Task.ts";
 
 export default function FilterButtons(){
 
-    const {taskList, filteredTasks, setFilter, filterTask} = useTaskContext();
+    const {setFilter, filterTask} = useTaskContext();
 
 
     const handleChange = (event : any) => {
