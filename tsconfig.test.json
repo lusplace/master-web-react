@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",  // Extends your main config
+  "compilerOptions": {
+    "jsx": "react-jsx",          // Enables JSX
+    "esModuleInterop": true,     // Fixes React default import
+    "composite": false           // Not needed for tests
+  },
+  "include": ["**/*.test.*", "**/*.spec.*"]
+}
