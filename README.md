@@ -1,3 +1,21 @@
+# Ejercicio Task List
+
+ - [ ] Pruebas: No, he recreado el proyecto 2 veces, lo he cambiado de js a ts y viceversa 3 veces, en mi ordenador no funcionan
+ - [x] Componentes: Funcionan, fuera de los despliegues por lo mencionado más abajo pero funcionan.
+ - [x] Custom hooks: Funcionan fuera de los despliegues, en una versión con ts debían de funcionar por el valor que devuelve useTasks al construirlo.
+ - [x] React Context: Mismo que los anteriores.
+ - [ ] Reducer: No me hizo faltal, traté de emplearlo en una versión de ts y me quedé sin tiempo, llegó a funcionar pero sin tiempo para adaptar el código de los filtros para que funcionase con el contexto nuevo.
+ - [x] Carga perezosa: se usar suspense.
+ - [ ] css: sin tiempo para aplicar flex apropiadamente.
+ - [x] Desplegarlo: 
+ ```
+git clone https://github.com/lusplace/react-task-list.git
+cd react-task-list
+npm install
+npm run dev
+```
+ir a localhost:5173
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
