@@ -4,7 +4,7 @@
  - [x] Componentes: Funcionan, fuera de los despliegues por lo mencionado más abajo pero funcionan.
  - [x] Custom hooks: Funcionan fuera de los despliegues, en una versión con ts debían de funcionar por el valor que devuelve useTasks al construirlo.
  - [x] React Context: Mismo que los anteriores.
- - [ ] Reducer: No me hizo faltal, traté de emplearlo en una versión de ts y me quedé sin tiempo, llegó a funcionar pero sin tiempo para adaptar el código de los filtros para que funcionase con el contexto nuevo.
+ - [ ] Reducer: Traté de emplearlo en una versión de ts y me quedé sin tiempo, llegó a funcionar pero sin tiempo para adaptar el código de los filtros para que funcionase con el contexto nuevo.
  - [x] Carga perezosa: se usar suspense.
  - [ ] css: sin tiempo para aplicar flex apropiadamente.
  - [x] Desplegarlo: 
